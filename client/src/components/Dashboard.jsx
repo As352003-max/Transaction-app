@@ -89,11 +89,11 @@ export default function Dashboard({ transactions, budgets }) {
         <div className="flex justify-center items-center min-h-screen">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-4 animate-fade-in">
                 <motion.div
-                    className={`col-span-full lg:col-span-1 rounded-2xl ${cardBg} relative overflow-hidden`}
+                    className={`col-span-full lg:col-span-1 rounded-2xl ${cardBg} relative overflow-hidden  flex flex-col items-center justify-center h-48`}
                     {...CARD_ANIMATION}
                 >
                     <div className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-indigo-400/30 to-blue-300/10 rounded-full blur-2xl z-0" />
-                    <h3 className="text-lg font-bold text-indigo-700 mb-2 relative z-10 ">Total Balance</h3>
+                    <h3 className="text-lg font-bold text-indigo-700 mb-2 relative z-10  text-center ">Total Balance</h3>
                     <motion.p
                         className={`text-3xl font-extrabold drop-shadow-lg ${
                             totalBalance >= 0 ? "text-emerald-500" : "text-rose-500"
