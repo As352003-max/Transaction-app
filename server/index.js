@@ -9,9 +9,10 @@ const app = express();
 const port = process.env.PORT || 5000;
 const mongoUri = process.env.MONGO_URI;
 
+// ✅ Add both localhost and Vercel frontend URL here
 const allowedOrigins = [
   'http://localhost:5173',
-  'https://transaction-app-xi.vercel.app/'
+  'https://transaction-app-xi.vercel.app'
 ];
 
 app.use(cors({
@@ -19,6 +20,7 @@ app.use(cors({
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
+      console.error("Blocked by CORS:", origin);
       callback(new Error('Not allowed by CORS'));
     }
   },
@@ -30,10 +32,7 @@ app.use(express.json());
 app.use('/api/transactions', transactionRoutes);
 app.use('/api/budgets', budgetRoutes);
 
-mongoose.connect(mongoUri, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
+mongoose.connect(mongoUri)
   .then(() => {
     console.log('✅ MongoDB connected successfully');
     app.listen(port, () => {
