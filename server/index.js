@@ -11,7 +11,7 @@ const mongoUri = process.env.MONGO_URI;
 
 const allowedOrigins = [
   'http://localhost:5173',
-  'https://transaction-app-xi.vercel.app'
+  'https://transaction-app-xi.vercel.app/'
 ];
 
 app.use(cors({
