@@ -28,7 +28,6 @@ export default function DashboardPage() {
         fetchData();
     }, []);
 
-    // Animated gradient background
     const animatedBg =
         "bg-gradient-to-br from-indigo-700 via-fuchsia-500 to-yellow-400 animate-gradient-move";
 
